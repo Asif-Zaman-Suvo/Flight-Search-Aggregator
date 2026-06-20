@@ -7,13 +7,7 @@ import { Plane, ArrowRightLeft, Users, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { ChevronDown } from "lucide-react";
 import { searchSchema, type SearchFormValues } from "@/lib/utils/validators";
 import { useSearchStore } from "@/store/useSearchStore";
 import { cn } from "@/lib/utils";
@@ -181,23 +175,19 @@ export function SearchForm({ defaultValues, compact = false }: SearchFormProps) 
             {!compact && <Label htmlFor="passengers">Passengers</Label>}
             <div className="relative">
               <Users className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
-              <Select
-                defaultValue={String(defaultValues?.passengers ?? 1)}
-                onValueChange={(v) => {
-                  if (v != null) setValue("passengers", parseInt(v, 10));
-                }}
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
+              <select
+                id="passengers"
+                value={watch("passengers")}
+                onChange={(e) => setValue("passengers", parseInt(e.target.value, 10))}
+                className="h-10 w-full appearance-none rounded-lg border border-input bg-white pl-9 pr-8 text-sm text-foreground outline-none transition-colors focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50"
               >
-                <SelectTrigger className="pl-9">
-                  <SelectValue placeholder="Passengers" />
-                </SelectTrigger>
-                <SelectContent>
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-                    <SelectItem key={n} value={String(n)}>
-                      {n} {n === 1 ? "Passenger" : "Passengers"}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+                  <option key={n} value={n}>
+                    {n} {n === 1 ? "Passenger" : "Passengers"}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
