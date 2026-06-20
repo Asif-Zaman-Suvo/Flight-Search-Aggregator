@@ -2,7 +2,7 @@
 
 import { ArrowUpDown, ArrowUp, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import type { SortState, SortKey } from "@/lib/types";
+import type { SortKey } from "@/lib/types";
 import { useSearchStore } from "@/store/useSearchStore";
 import { cn } from "@/lib/utils";
 

@@ -11,7 +11,6 @@ import { useSearchStore } from "@/store/useSearchStore";
 import {
   getUniqueAirlines,
   formatPrice,
-  formatDuration,
 } from "@/lib/utils/flight-filters";
 import { TIME_RANGES, type StopType, type CabinClass } from "@/lib/types";
 import { cn } from "@/lib/utils";

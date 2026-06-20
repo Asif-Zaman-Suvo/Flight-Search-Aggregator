@@ -88,7 +88,7 @@ export function FlightDetailContent({ params }: FlightDetailContentProps) {
       </Button>
 
       <div className="bg-white rounded-xl border border-border overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-5 text-white">
+        <div className="bg-linear-to-r from-blue-600 to-blue-500 p-5 text-white">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-xl bg-white/20 flex items-center justify-center">
@@ -133,7 +133,7 @@ export function FlightDetailContent({ params }: FlightDetailContentProps) {
               </div>
               <div className="w-full flex items-center gap-2">
                 <div className="h-px flex-1 bg-border" />
-                <Plane className="h-4 w-4 text-blue-500 rotate-90 flex-shrink-0" />
+                <Plane className="h-4 w-4 text-blue-500 rotate-90 shrink-0" />
                 <div className="h-px flex-1 bg-border" />
               </div>
               <Badge variant={flight.stops === 0 ? "default" : "secondary"} className="text-xs">

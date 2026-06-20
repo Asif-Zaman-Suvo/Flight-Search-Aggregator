@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll } from "vitest";
 import {
   applyFilters,
   applySort,
@@ -9,7 +9,7 @@ import {
   formatPrice,
 } from "@/lib/utils/flight-filters";
 import { generateFlights } from "@/lib/data/flights";
-import type { Flight, FilterState, SortState } from "@/lib/types";
+import type { Flight, FilterState } from "@/lib/types";
 
 const DATE = "2025-10-15";
 let flights: Flight[];
